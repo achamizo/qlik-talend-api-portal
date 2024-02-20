@@ -335,7 +335,7 @@ api-tryin: |-
         "projectId" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
       },
       "variables" : {
-        "cfd2abcc-7d00-4d71-a2b1-f4ed40dbed68" : {
+        "7b6cbe1c-8a8a-418b-ae05-fe42df89a4a3" : {
           "name" : "BaseUrl",
           "value" : "https://lp1uhp3.us.api-mocks.com",
           "enabled" : true,
@@ -348,7 +348,7 @@ api-tryin: |-
         "projectId" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
       },
       "variables" : {
-        "48f38339-fa83-4103-a622-a73937e01dc4" : {
+        "1e635e26-1e4d-4bc2-b960-c75c64341406" : {
           "name" : "BaseUrl",
           "value" : "http://tal-bhough5520:8040/services/student-api",
           "enabled" : true,
