@@ -4,5 +4,5 @@ To enable it, update the job `github-pages.yaml` in order to specify which branc
 ```
 on:
   push:
-    branches: ['main']
+    branches: [ 'main' ]
 ```
