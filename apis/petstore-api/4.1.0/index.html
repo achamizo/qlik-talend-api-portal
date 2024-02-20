@@ -1,0 +1,3691 @@
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+    <meta data-indicator-element-id="dhcIndicator" name="dhc-aware-page" />
+      <meta name="try-in-tester-api-context" content="{&#34;etnResource6Url&#34;:&#34;/apitesterformat6.json&#34;}" />
+      <title>Petstore API</title>
+      <meta content="Petstore API" property="og:title">
+    
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/apis/petstore-api/4.1.0/">
+
+
+<link rel="icon" href="../../../img/brand-logo.png" sizes="196x196" />
+<link rel="apple-touch-icon" href="../../../img/brand-logo.png" sizes="196x196" />
+
+<link rel="stylesheet" href="../../../css/full.min.e55d9236833ff9b3819e293fc402c2b5454b9015e74e6521a4916948975ee1f8.css" media="all" />
+
+
+<meta name="theme-color" content="#fafafa" />
+</head>
+	<body class="api-reference">
+		<header class="header">
+
+
+<ul class="header__menu">
+  <li class="header__item">
+    <a class="header__link header__brand " href="../../../" >
+      <span class="sr-only">Home</span>
+      <span>API Portal</span>
+    </a>
+  </li>
+<li class="header__item">
+    <a href="../../../getting-started/" class="header__link"  >Getting started</a>
+  </li>
+<li class="header__item">
+    <a href="../../../apis/" class="header__link header__section--active"  >APIs</a>
+  </li>
+</ul>
+</header>
+    <aside class="left-panel">
+        
+
+<div class="left-panel__wrapper">
+  <div class="api__general">
+    <h1 class="left-panel__api-title">Petstore API</h1>
+
+
+<div class="dropdown api__version"><span class="btn btn__version api__version--selected">4.1.0</span>
+</div>
+</div>
+  <div class="api__action">
+    
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-api-try-in-tester "
+          type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+
+<div class="dropdown">
+  <button class="js-dropdown btn btn--primary" aria-controls="download" aria-haspopup="true" aria-expanded="false" type="button">
+    Download<svg viewBox="0 0 16 16" aria-hidden="true" class="dropdown__icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg>
+  </button>
+  <div id="download" role="menu" class="dropdown__content" hidden>
+    <a href="../../../apis/petstore-api/4.1.0/openapi30.json" role="menuitem" class="dropdown__item" tabindex="-1" download="petstore-api-4.1.0-openapi30.json">OAS 3</a>
+    <a href="../../../apis/petstore-api/4.1.0/swagger20.json" role="menuitem" class="dropdown__item" tabindex="-1" download="petstore-api-4.1.0-swagger20.json">Swagger 2</a>
+    </div>
+  </div>
+</div>
+
+  <form class="search-form">
+    <label class="search-form__label" for="filter">
+      <svg class="search-form__icon" aria-hidden="true" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M7.5 14C3.9 14 1 11.1 1 7.5S3.9 1 7.5 1 14 3.9 14 7.5 11.1 14 7.5 14zm0-11C5 3 3 5 3 7.5S5 12 7.5 12 12 10 12 7.5 10 3 7.5 3zm6 9c-.4.6-.9 1.1-1.5 1.5l2.5 2.5 1.5-1.5-2.5-2.5z"></path></svg>
+      <span class="sr-only">Filter</span>
+    </label>
+    <input class="search-form__field js-filter" id="filter" type="search" placeholder="Filter" />
+  </form>
+
+  <hr />
+
+  <nav class="api__nav" aria-label="API content">
+    <ul class="api-toc js-api-toc">
+<li>
+        <details open>
+          <summary class="api-toc__section-title"><a href="#section_pet">Pet</a></summary>
+  <ul class="api-toc__content">
+    
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_finds-pets-by-tags">Finds Pets by tags</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_finds-pets-by-status">Finds Pets by status</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-post"><a href="#operation_add-a-new-pet-to-the-store">Add a new pet to the store</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-put"><a href="#operation_update-an-existing-pet">Update an existing pet</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-post"><a href="#operation_updates-a-pet-in-the-store-with-form-data">Updates a pet in the store with form data</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-delete"><a href="#operation_deletes-a-pet">Deletes a pet</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_find-pet-by-id">Find pet by ID</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-post"><a href="#operation_uploads-an-image">uploads an image</a></li>
+        <li class="api-toc__item api-toc__item--datatype"><a href="#type_pet">Pet</a></li>
+    <li class="api-toc__item api-toc__item--datatype"><a href="#type_tag">Tag</a></li>
+    <li class="api-toc__item api-toc__item--datatype"><a href="#type_category">Category</a></li>
+    <li class="api-toc__item api-toc__item--datatype"><a href="#type_apiresponse">ApiResponse</a></li>
+    </ul>
+</details>
+      </li>
+<li>
+        <details open>
+          <summary class="api-toc__section-title"><a href="#section_store">Store</a></summary>
+  <ul class="api-toc__content">
+    
+  <li class="api-toc__item api-toc__item--request-post"><a href="#operation_place-an-order-for-a-pet">Place an order for a pet</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_find-purchase-order-by-id">Find purchase order by ID</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-delete"><a href="#operation_delete-purchase-order-by-id">Delete purchase order by ID</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_returns-pet-inventories-by-status">Returns pet inventories by status</a></li>
+        <li class="api-toc__item api-toc__item--datatype"><a href="#type_order">Order</a></li>
+    </ul>
+</details>
+      </li>
+<li>
+        <details open>
+          <summary class="api-toc__section-title"><a href="#section_user">User</a></summary>
+  <ul class="api-toc__content">
+    
+  <li class="api-toc__item api-toc__item--request-post"><a href="#operation_create-user">Create user</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-post"><a href="#operation_creates-list-of-users-with-given-input-array_2">Creates list of users with given input array</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-post"><a href="#operation_creates-list-of-users-with-given-input-array">Creates list of users with given input array</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-delete"><a href="#operation_delete-user">Delete user</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_get-user-by-user-name">Get user by user name</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-put"><a href="#operation_updated-user">Updated user</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_logs-user-into-the-system">Logs user into the system</a></li>
+        
+  <li class="api-toc__item api-toc__item--request-get"><a href="#operation_logs-out-current-logged-in-user-session">Logs out current logged in user session</a></li>
+        <li class="api-toc__item api-toc__item--datatype"><a href="#type_user">User</a></li>
+    </ul>
+</details>
+      </li>
+</ul>
+  </nav>
+</div>
+
+</aside>
+      <main id="content">
+        
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+	<ol class="breadcrumb__list">
+		<li class="breadcrumb__item"><a href="../../../" class="breadcrumb__element">Home</a></li>
+    <li class="breadcrumb__item"><span class="breadcrumb__separator" aria-hidden="true"> / </span><a href="../../../apis/" class="breadcrumb__element">APIs</a></li>
+
+  
+  <li class="breadcrumb__item"><span class="breadcrumb__separator" aria-hidden="true"> / </span><a aria-current="page" href="../../../apis/petstore-api/4.1.0/" class="breadcrumb__element">Petstore API</a></li>
+</ol>
+</nav>
+
+
+<h2 class="api-reference__api-title" id="top">Petstore API</h2>
+<div class="api__content_description wysiwyg">This is a sample server Petstore server.  You can find out more about Swagger at <a href="http://swagger.io">http://swagger.io</a> or on <a href="http://swagger.io/irc/">irc.freenode.net, #swagger</a>.  For this sample, you can use the api key <code>special-key</code> to test the authorization filters.</div>
+
+<dl class="definition contact">
+  <dt class="contact__term">Contact</dt>
+  <dd class="contact__definition"><span><a href="mailto:apiteam@swagger.io">apiteam@swagger.io</a></span></dd>
+    <dt class="contact__term">License</dt>
+      <dd class="contact__definition"><a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</a></dd>
+    <dt class="contact__term">Terms of Service</dt>
+      <dd class="contact__definition">http://swagger.io/terms/</dd>
+  </dl>
+<div class="definition">
+      <h3 id="mediatypes">Media type</h3>
+      <div>application/json</div>
+    </div>
+<div class="definition">
+      <h3 id="endpoints">Endpoint</h3>
+      <ul class="endpoints">
+        <li class="endpoint__value">
+          <span class="endpoint__url">http://petstore.swagger.io/v2</span>
+          </li>
+        </ul>
+    </div>
+<div class="definition">
+      <h3 id="global-security">Global security</h3>
+      <p class="note">These security schemes apply to the entire API</p>
+      <div>
+        
+
+<ul class="global-security">
+
+<li class="global-security__type">No authentication</li>
+</ul>
+</div>
+    </div>
+<section class="definition" aria-labelledby="securitySchemes">
+      <h3 id="securitySchemes">Security schemes</h3>
+      <p class="note">These schemes can be referenced across the API</p>
+  
+
+<details class="security_scheme">
+        <summary class="security-scheme__name" id="securityscheme_api_key"><span class="security-scheme__name--content">api_key</span> <svg viewBox="0 0 16 16" aria-hidden="true" class="security-scheme__name--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+        <table class="security-scheme__content">
+          <caption class="security-scheme__type">Custom / API key</caption>
+          <thead class="sr-only">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+          </thead>
+          <tbody>
+  </tbody>
+        </table>
+  
+
+
+
+<table>
+  <caption class="security-scheme__headers">Headers</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="security-scheme__parameter">
+	<th class="security-scheme__parameter-type-label" scope="row">api_key</th>
+	<td class="wysiwyg"></td>
+	<td class="security-scheme__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="security-scheme__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+
+<details class="security_scheme">
+        <summary class="security-scheme__name" id="securityscheme_petstore_auth"><span class="security-scheme__name--content">petstore_auth</span> <svg viewBox="0 0 16 16" aria-hidden="true" class="security-scheme__name--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+        <table class="security-scheme__content">
+          <caption class="security-scheme__type">OAuth 2.0</caption>
+          <thead class="sr-only">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+          </thead>
+          <tbody>
+  <tr class="security-scheme__parameter">
+            <th scope="row">Grant</th>
+            <td><span class="badge">implicit</span></td>
+          </tr>
+  <tr class="security-scheme__parameter">
+            <th scope="row">Authorization URI</th>
+            <td><span class="badge">http://petstore.swagger.io/oauth/dialog</span></td>
+          </tr>
+  <tr class="security-scheme__parameter">
+            <th scope="row">Scopes</th>
+            <td>
+              <ul class="security-scheme__scopes">
+    <li><span class="badge">write:pets</span> <div class="security-scheme__scope-description wysiwyg" id="securityschemescope_writepets">modify pets in your account</div></li>
+    <li><span class="badge">read:pets</span> <div class="security-scheme__scope-description wysiwyg" id="securityschemescope_readpets">read your pets</div></li>
+    </ul>
+            </td>
+          </tr>
+  </tbody>
+        </table>
+  </details>
+</section>
+
+<hr class="separator"/>
+    <section aria-labelledby="section_pet">
+      <h2 id="section_pet">Pet</h2>
+  
+
+<section id="operation_finds-pets-by-tags_anchor" class="operation" aria-labelledby="operation_finds-pets-by-tags">
+	<div class="operation__content">
+        <h3 id="operation_finds-pets-by-tags">Finds Pets by tags</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/pet/findByTags</span>
+	<div class="operation__description wysiwyg">Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.</div><div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_petstore_auth">petstore_auth</a>
+			<span>(Scopes:
+				<span class="security-scope-reference">
+						write:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_writepets">
+									<span class="sr-only">write:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					,<span class="security-scope-reference">
+						read:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_readpets">
+									<span class="sr-only">read:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					)
+		</span>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+<table>
+  <caption class="request__query-parameters">Query parameters</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+<tr class="request__parameter">
+  <th class="request__parameter-type-label" scope="row" aria-describedby="c4091b810d0a6584fb3d0f91d22bf82e">tags</th>
+  <td></td>
+  <td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+array of 
+
+string
+</span>
+    <span class="badge badge--warn">Required</span></td>
+  <td class="request__parameter-attributes-examples">
+
+
+<table id="c4091b810d0a6584fb3d0f91d22bf82e">
+  <caption class="request-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="request__parameter array-parameter--description">
+      <th scope="row">array</th>
+      <td>Tags to filter by</td>
+      <td class="request__parameter-attributes-examples">
+  
+
+
+
+</td>
+    </tr>
+<tr class="request__parameter array-parameter--description">
+      <th scope="row">
+      string</th>
+      <td></td>
+      <td class="request__parameter-attributes-examples">
+
+
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+  </td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/xml</span><span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_93bb514ebb78844039885c02fcbe57c6applicationxml-applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<table>
+  <caption class="data-type-title sr-only"> details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="response-body__parameter response-body__array-type-details">
+      <th class="response-body__parameter-type-label" scope="row" aria-describedby="3fe2c0fea3c346ca0042cbdff0ccb344">
+
+
+array of 
+
+
+
+&lt;a href=&#34;#type_pet&#34;&gt;Pet&lt;/a&gt;
+&lt;button type=&#34;button&#34; class=&#34;btn--naked tooltip js-tooltip-trigger&#34; aria-expanded=&#34;false&#34; aria-haspopup=&#34;true&#34; aria-controls=&#34;tooltip_type_pet&#34;&gt;
+	&lt;span class=&#34;sr-only&#34;&gt;Pet details&lt;/span&gt;
+	&lt;svg class=&#34;tooltip__icon&#34; viewBox=&#34;0 0 16 16&#34; aria-hidden=&#34;true&#34;&gt;&lt;g&gt;&lt;path d=&#34;M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/button&gt;
+
+
+      </th>
+      <td class="response-body__parameter-attributes-examples">
+
+
+<table id="3fe2c0fea3c346ca0042cbdff0ccb344">
+  <caption class="response-body-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="response-body__parameter response-body__array-first-type">
+      <th scope="row">array</th>
+      <td></td>
+      <td class="response-body__parameter-attributes-examples">
+  
+    
+
+</td>
+    </tr>
+<tr class="response-body__parameter array-parameter--description">
+      <th scope="row">
+      Pet</th>
+      <td></td>
+      <td class="response-body__parameter-attributes-examples">
+
+
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+      </td>
+      <td colspan="2"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+        </div>
+    </details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid tag value</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="afda4b22-b78a-46a4-abad-351e7f516610" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_finds-pets-by-status_anchor" class="operation" aria-labelledby="operation_finds-pets-by-status">
+	<div class="operation__content">
+        <h3 id="operation_finds-pets-by-status">Finds Pets by status</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/pet/findByStatus</span>
+	<div class="operation__description wysiwyg">Multiple status values can be provided with comma separated strings</div><div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_petstore_auth">petstore_auth</a>
+			<span>(Scopes:
+				<span class="security-scope-reference">
+						write:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_writepets">
+									<span class="sr-only">write:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					,<span class="security-scope-reference">
+						read:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_readpets">
+									<span class="sr-only">read:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					)
+		</span>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+<table>
+  <caption class="request__query-parameters">Query parameters</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+<tr class="request__parameter">
+  <th class="request__parameter-type-label" scope="row" aria-describedby="35b2101dfa2f80b0489fcd98ebd14026">status</th>
+  <td></td>
+  <td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+array of 
+
+string
+</span>
+    <span class="badge badge--warn">Required</span></td>
+  <td class="request__parameter-attributes-examples">
+
+
+<table id="35b2101dfa2f80b0489fcd98ebd14026">
+  <caption class="request-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="request__parameter array-parameter--description">
+      <th scope="row">array</th>
+      <td>Status values that need to be considered for filter</td>
+      <td class="request__parameter-attributes-examples">
+  
+
+
+
+</td>
+    </tr>
+<tr class="request__parameter array-parameter--description">
+      <th scope="row">
+      string</th>
+      <td></td>
+      <td class="request__parameter-attributes-examples">
+
+
+
+<div class="request__parameter-attribute-example"><span class="metadata__label">Default</span><span class="badge">available</span></div><div class="request__parameter-attribute-example"><span class="metadata__label">Enum</span><ul class="metadata-enum">		<li class="badge">available</li><li class="badge">pending</li><li class="badge">sold</li></ul></div></td>
+    </tr>
+  </tbody>
+</table>
+
+  </td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/xml</span><span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_cbe9cb84e573851b4632f808c7b054b9applicationxml-applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<table>
+  <caption class="data-type-title sr-only"> details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="response-body__parameter response-body__array-type-details">
+      <th class="response-body__parameter-type-label" scope="row" aria-describedby="cf3c60f4cc40ce0d2ba4e02ca33fb3f4">
+
+
+array of 
+
+
+
+&lt;a href=&#34;#type_pet&#34;&gt;Pet&lt;/a&gt;
+&lt;button type=&#34;button&#34; class=&#34;btn--naked tooltip js-tooltip-trigger&#34; aria-expanded=&#34;false&#34; aria-haspopup=&#34;true&#34; aria-controls=&#34;tooltip_type_pet&#34;&gt;
+	&lt;span class=&#34;sr-only&#34;&gt;Pet details&lt;/span&gt;
+	&lt;svg class=&#34;tooltip__icon&#34; viewBox=&#34;0 0 16 16&#34; aria-hidden=&#34;true&#34;&gt;&lt;g&gt;&lt;path d=&#34;M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/button&gt;
+
+
+      </th>
+      <td class="response-body__parameter-attributes-examples">
+
+
+<table id="cf3c60f4cc40ce0d2ba4e02ca33fb3f4">
+  <caption class="response-body-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="response-body__parameter response-body__array-first-type">
+      <th scope="row">array</th>
+      <td></td>
+      <td class="response-body__parameter-attributes-examples">
+  
+    
+
+</td>
+    </tr>
+<tr class="response-body__parameter array-parameter--description">
+      <th scope="row">
+      Pet</th>
+      <td></td>
+      <td class="response-body__parameter-attributes-examples">
+
+
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+      </td>
+      <td colspan="2"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+        </div>
+    </details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid status value</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="3da4ea0f-146c-494b-b452-e4d4a1b65700" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_add-a-new-pet-to-the-store_anchor" class="operation" aria-labelledby="operation_add-a-new-pet-to-the-store">
+	<div class="operation__content">
+        <h3 id="operation_add-a-new-pet-to-the-store">Add a new pet to the store</h3>
+        <span class="operation--post operation--default">POST</span> <span class="operation__url">/pet</span>
+	<div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_petstore_auth">petstore_auth</a>
+			<span>(Scopes:
+				<span class="security-scope-reference">
+						write:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_writepets">
+									<span class="sr-only">write:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					,<span class="security-scope-reference">
+						read:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_readpets">
+									<span class="sr-only">read:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					)
+		</span>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/json</span><span class="request__mimetype">application/xml</span></div>
+</div>
+
+    <div id="body_34828b46935b9050cb751ce7be88fcb4applicationjson-applicationxml" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_pet">Pet</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_pet">
+	<span class="sr-only">Pet details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">405</span>Status 405</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid input</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="4567ac19-428f-4c96-87d8-58b879c8a961" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+<section id="operation_update-an-existing-pet_anchor" class="operation" aria-labelledby="operation_update-an-existing-pet">
+	<div class="operation__content">
+        <h3 id="operation_update-an-existing-pet">Update an existing pet</h3>
+        <span class="operation--put operation--default">PUT</span> <span class="operation__url">/pet</span>
+	<div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_petstore_auth">petstore_auth</a>
+			<span>(Scopes:
+				<span class="security-scope-reference">
+						write:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_writepets">
+									<span class="sr-only">write:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					,<span class="security-scope-reference">
+						read:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_readpets">
+									<span class="sr-only">read:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					)
+		</span>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/json</span><span class="request__mimetype">application/xml</span></div>
+</div>
+
+    <div id="body_2c9bc88b55efcb8b1830b4e493604577applicationjson-applicationxml" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_pet">Pet</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_pet">
+	<span class="sr-only">Pet details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid ID supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Pet not found</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">405</span>Status 405</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Validation exception</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="be380936-7e09-4b4d-a34d-891357031ecc" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_updates-a-pet-in-the-store-with-form-data_anchor" class="operation" aria-labelledby="operation_updates-a-pet-in-the-store-with-form-data">
+	<div class="operation__content">
+        <h3 id="operation_updates-a-pet-in-the-store-with-form-data">Updates a pet in the store with form data</h3>
+        <span class="operation--post operation--default">POST</span> <span class="operation__url">/pet/{petId}</span>
+	<div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_petstore_auth">petstore_auth</a>
+			<span>(Scopes:
+				<span class="security-scope-reference">
+						write:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_writepets">
+									<span class="sr-only">write:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					,<span class="security-scope-reference">
+						read:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_readpets">
+									<span class="sr-only">read:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					)
+		</span>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">petId</th>
+	<td class="wysiwyg">ID of pet to return</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/x-www-form-urlencoded</span></div>
+</div>
+
+    <div id="body_844817bb5b3ebc827b8940f06c35ec59applicationx-www-form-urlencoded" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request-body__parameter">
+	<th class="request-body__parameter-type-label" scope="row">name</th>
+	<td class="wysiwyg">Updated name of the pet</td>
+	<td class="request-body__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="request-body__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="request-body__parameter">
+	<th class="request-body__parameter-type-label" scope="row">status</th>
+	<td class="wysiwyg">Updated status of the pet</td>
+	<td class="request-body__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="request-body__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+        </div>
+    </div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">405</span>Status 405</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid input</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="02c15703-a1a3-47a3-8420-708b6d99d12a" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+<section id="operation_deletes-a-pet_anchor" class="operation" aria-labelledby="operation_deletes-a-pet">
+	<div class="operation__content">
+        <h3 id="operation_deletes-a-pet">Deletes a pet</h3>
+        <span class="operation--delete operation--default">DELETE</span> <span class="operation__url">/pet/{petId}</span>
+	<div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_petstore_auth">petstore_auth</a>
+			<span>(Scopes:
+				<span class="security-scope-reference">
+						write:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_writepets">
+									<span class="sr-only">write:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					,<span class="security-scope-reference">
+						read:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_readpets">
+									<span class="sr-only">read:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					)
+		</span>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">petId</th>
+	<td class="wysiwyg">ID of pet to return</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<table>
+  <caption class="request__headers">Headers</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">api_key</th>
+	<td class="wysiwyg"></td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid ID supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Pet not found</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="1097797e-06e1-404d-b943-9468fb7cc100" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+<section id="operation_find-pet-by-id_anchor" class="operation" aria-labelledby="operation_find-pet-by-id">
+	<div class="operation__content">
+        <h3 id="operation_find-pet-by-id">Find pet by ID</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/pet/{petId}</span>
+	<div class="operation__description wysiwyg">Returns a single pet</div><div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_api_key">api_key</a>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">petId</th>
+	<td class="wysiwyg">ID of pet to return</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/xml</span><span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_8c269f410584bc5358beeb4c3b7789b0applicationxml-applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_pet">Pet</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_pet">
+	<span class="sr-only">Pet details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid ID supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Pet not found</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="8d94befd-ed55-4181-908b-e342b5231028" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_uploads-an-image_anchor" class="operation" aria-labelledby="operation_uploads-an-image">
+	<div class="operation__content">
+        <h3 id="operation_uploads-an-image">uploads an image</h3>
+        <span class="operation--post operation--default">POST</span> <span class="operation__url">/pet/{petId}/uploadImage</span>
+	<div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_petstore_auth">petstore_auth</a>
+			<span>(Scopes:
+				<span class="security-scope-reference">
+						write:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_writepets">
+									<span class="sr-only">write:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					,<span class="security-scope-reference">
+						read:pets
+								<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="securityschemescope_readpets">
+									<span class="sr-only">read:pets details</span>
+									<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true">
+										<g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g>
+									</svg>
+								</button>
+						</span>
+					)
+		</span>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">petId</th>
+	<td class="wysiwyg">ID of pet to return</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+<div class="request__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">multipart/form-data</span></div>
+</div>
+
+    <div id="body_bb493258b97cc43f560b150487cbe8e8multipartform-data" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request-body__parameter">
+	<th class="request-body__parameter-type-label" scope="row">additionalMetadata</th>
+	<td class="wysiwyg">Additional data to pass to server</td>
+	<td class="request-body__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="request-body__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="request-body__parameter">
+	<th class="request-body__parameter-type-label" scope="row">file</th>
+	<td class="wysiwyg">file to upload</td>
+	<td class="request-body__parameter-type">
+    <span class="parameter-type">
+      
+
+file</span>
+<span class="badge">Optional</span></td>
+	<td class="request-body__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+        </div>
+    </div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_4c9338b42bf69854cbeb577180e05cb8applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_apiresponse">ApiResponse</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_apiresponse">
+	<span class="sr-only">ApiResponse details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="8323c0a7-9874-4d3f-87b4-a05db886bf8b" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="type_pet_anchor" class="datatype" aria-labelledby="type_pet">
+	<div class="data-type__content">
+		<div class="data-type__header">
+			<h3 id="type_pet">Pet</h3>
+		</div>
+		<div class="definition__data-type definition">
+			<div id="tooltip_type_pet" class="js-tooltip-content" >
+
+	
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">id</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">category</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+
+
+<a href="#type_category">Category</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_category">
+	<span class="sr-only">Category details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">name</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example">
+	<span class="metadata__label">Example</span><pre class="badge metadata__example">doggie</pre></div>
+</td>
+</tr>
+
+      
+
+<tr class="data-type__parameter">
+  <th class="data-type__parameter-type-label" scope="row" aria-describedby="02601fbc8d21db3a4df5f4e289b01890">photoUrls</th>
+  <td></td>
+  <td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+array of 
+
+string
+</span>
+    <span class="badge badge--warn">Required</span></td>
+  <td class="data-type__parameter-attributes-examples">
+
+
+<table id="02601fbc8d21db3a4df5f4e289b01890">
+  <caption class="data-type-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="data-type__parameter array-parameter--description">
+      <th scope="row">array</th>
+      <td></td>
+      <td class="data-type__parameter-attributes-examples">
+  
+
+
+
+</td>
+    </tr>
+<tr class="data-type__parameter array-parameter--description">
+      <th scope="row">
+      string</th>
+      <td></td>
+      <td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+  </td>
+</tr>
+
+      
+
+<tr class="data-type__parameter">
+  <th class="data-type__parameter-type-label" scope="row" aria-describedby="1f01058fd9f44b6ec0bd82d9238a120b">tags</th>
+  <td></td>
+  <td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+array of 
+
+
+
+&lt;a href=&#34;#type_tag&#34;&gt;Tag&lt;/a&gt;
+&lt;button type=&#34;button&#34; class=&#34;btn--naked tooltip js-tooltip-trigger&#34; aria-expanded=&#34;false&#34; aria-haspopup=&#34;true&#34; aria-controls=&#34;tooltip_type_tag&#34;&gt;
+	&lt;span class=&#34;sr-only&#34;&gt;Tag details&lt;/span&gt;
+	&lt;svg class=&#34;tooltip__icon&#34; viewBox=&#34;0 0 16 16&#34; aria-hidden=&#34;true&#34;&gt;&lt;g&gt;&lt;path d=&#34;M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/button&gt;
+
+</span>
+    <span class="badge">Optional</span></td>
+  <td class="data-type__parameter-attributes-examples">
+
+
+<table id="1f01058fd9f44b6ec0bd82d9238a120b">
+  <caption class="data-type-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="data-type__parameter array-parameter--description">
+      <th scope="row">array</th>
+      <td></td>
+      <td class="data-type__parameter-attributes-examples">
+  
+
+
+
+</td>
+    </tr>
+<tr class="data-type__parameter array-parameter--description">
+      <th scope="row">
+      Tag</th>
+      <td></td>
+      <td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+  </td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">status</th>
+	<td class="wysiwyg">pet status in the store</td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Enum</span><ul class="metadata-enum">		<li class="badge">available</li><li class="badge">pending</li><li class="badge">sold</li></ul></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+	</div>
+</section>
+
+
+<section id="type_tag_anchor" class="datatype" aria-labelledby="type_tag">
+	<div class="data-type__content">
+		<div class="data-type__header">
+			<h3 id="type_tag">Tag</h3>
+		</div>
+		<div class="definition__data-type definition">
+			<div id="tooltip_type_tag" class="js-tooltip-content" >
+
+	
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">id</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">name</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+	</div>
+</section>
+
+
+<section id="type_category_anchor" class="datatype" aria-labelledby="type_category">
+	<div class="data-type__content">
+		<div class="data-type__header">
+			<h3 id="type_category">Category</h3>
+		</div>
+		<div class="definition__data-type definition">
+			<div id="tooltip_type_category" class="js-tooltip-content" >
+
+	
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">id</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">name</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+	</div>
+</section>
+
+
+<section id="type_apiresponse_anchor" class="datatype" aria-labelledby="type_apiresponse">
+	<div class="data-type__content">
+		<div class="data-type__header">
+			<h3 id="type_apiresponse">ApiResponse</h3>
+		</div>
+		<div class="definition__data-type definition">
+			<div id="tooltip_type_apiresponse" class="js-tooltip-content" >
+
+	
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">code</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT32</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">type</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">message</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+	</div>
+</section>
+</section>
+<hr class="separator"/>
+    <section aria-labelledby="section_store">
+      <h2 id="section_store">Store</h2>
+  
+
+<section id="operation_place-an-order-for-a-pet_anchor" class="operation" aria-labelledby="operation_place-an-order-for-a-pet">
+	<div class="operation__content">
+        <h3 id="operation_place-an-order-for-a-pet">Place an order for a pet</h3>
+        <span class="operation--post operation--default">POST</span> <span class="operation__url">/store/order</span>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_05953c4b88fb82cbb543e19c770b68e4applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_order">Order</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_order">
+	<span class="sr-only">Order details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/xml</span><span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_296f3ec88b0b438b751749b054cbe58capplicationxml-applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_order">Order</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_order">
+	<span class="sr-only">Order details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid Order</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="3816fac2-73c6-43f8-87e6-4c41270f5051" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_find-purchase-order-by-id_anchor" class="operation" aria-labelledby="operation_find-purchase-order-by-id">
+	<div class="operation__content">
+        <h3 id="operation_find-purchase-order-by-id">Find purchase order by ID</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/store/order/{orderId}</span>
+	<div class="operation__description wysiwyg">For valid response try integer IDs with value &gt;= 1 and &lt;= 10. Other values will generated exceptions</div><div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">orderId</th>
+	<td class="wysiwyg"></td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+<div class="request__parameter-attribute-example">
+	<span class="metadata__label">Minimum</span><span class="badge">1</span><span class="metadata__label">Maximum</span><span class="badge">10</span></div>
+<div class="request__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/xml</span><span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_0bf5b14ec85c578e33982b407986b4bcapplicationxml-applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_order">Order</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_order">
+	<span class="sr-only">Order details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid ID supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Order not found</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="4e25864c-4acc-4e1a-93f2-e0442f913821" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+<section id="operation_delete-purchase-order-by-id_anchor" class="operation" aria-labelledby="operation_delete-purchase-order-by-id">
+	<div class="operation__content">
+        <h3 id="operation_delete-purchase-order-by-id">Delete purchase order by ID</h3>
+        <span class="operation--delete operation--default">DELETE</span> <span class="operation__url">/store/order/{orderId}</span>
+	<div class="operation__description wysiwyg">For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors</div><div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">orderId</th>
+	<td class="wysiwyg"></td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+<div class="request__parameter-attribute-example">
+	<span class="metadata__label">Minimum</span><span class="badge">1</span><span class="metadata__label">Maximum</span><span class="badge">10</span></div>
+<div class="request__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid ID supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Order not found</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="c441e2e1-f24b-4412-8406-36bf165b4f05" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_returns-pet-inventories-by-status_anchor" class="operation" aria-labelledby="operation_returns-pet-inventories-by-status">
+	<div class="operation__content">
+        <h3 id="operation_returns-pet-inventories-by-status">Returns pet inventories by status</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/store/inventory</span>
+	<div class="operation__description wysiwyg">Returns a map of status codes to quantities</div><div class="definition__security definition">
+			<h4>Security</h4>
+	      	<div>
+			
+
+<ul class="operation-security">
+
+<li class="operation-security__type">
+		<a href="#securityscheme_api_key">api_key</a>
+			</li>
+		</ul>
+</div>
+	    </div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_b90451bc8fee8c6b53427b8350749bc8applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+</div>
+        </div>
+    </details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="db23ec47-776e-49a1-ac0d-2dc69d8b29aa" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="type_order_anchor" class="datatype" aria-labelledby="type_order">
+	<div class="data-type__content">
+		<div class="data-type__header">
+			<h3 id="type_order">Order</h3>
+		</div>
+		<div class="definition__data-type definition">
+			<div id="tooltip_type_order" class="js-tooltip-content" >
+
+	
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">id</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">petId</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">quantity</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT32</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">shipDate</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+datetime</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">status</th>
+	<td class="wysiwyg">Order Status</td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Enum</span><ul class="metadata-enum">		<li class="badge">placed</li><li class="badge">approved</li><li class="badge">delivered</li></ul></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">complete</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+boolean</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+	</div>
+</section>
+</section>
+<hr class="separator"/>
+    <section aria-labelledby="section_user">
+      <h2 id="section_user">User</h2>
+  
+
+<section id="operation_create-user_anchor" class="operation" aria-labelledby="operation_create-user">
+	<div class="operation__content">
+        <h3 id="operation_create-user">Create user</h3>
+        <span class="operation--post operation--default">POST</span> <span class="operation__url">/user</span>
+	<div class="operation__description wysiwyg">This can only be done by the logged in user.</div><div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_68e725ce84b40b1fb9533487b8b9cc50applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_user">User</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_user">
+	<span class="sr-only">User details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="0150d33b-4014-46b9-b905-aca48cbbbdb9" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_creates-list-of-users-with-given-input-array_2_anchor" class="operation" aria-labelledby="operation_creates-list-of-users-with-given-input-array_2">
+	<div class="operation__content">
+        <h3 id="operation_creates-list-of-users-with-given-input-array_2">Creates list of users with given input array</h3>
+        <span class="operation--post operation--default">POST</span> <span class="operation__url">/user/createWithArray</span>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_0be7bb684b38907ecb48c155cf983452applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<table>
+  <caption class="data-type-title sr-only"> details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="request-body__parameter request-body__array-type-details">
+      <th class="request-body__parameter-type-label" scope="row" aria-describedby="ced3b4f400cc63c40bafcf02423aecf3">
+
+
+array of 
+
+
+
+&lt;a href=&#34;#type_user&#34;&gt;User&lt;/a&gt;
+&lt;button type=&#34;button&#34; class=&#34;btn--naked tooltip js-tooltip-trigger&#34; aria-expanded=&#34;false&#34; aria-haspopup=&#34;true&#34; aria-controls=&#34;tooltip_type_user&#34;&gt;
+	&lt;span class=&#34;sr-only&#34;&gt;User details&lt;/span&gt;
+	&lt;svg class=&#34;tooltip__icon&#34; viewBox=&#34;0 0 16 16&#34; aria-hidden=&#34;true&#34;&gt;&lt;g&gt;&lt;path d=&#34;M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/button&gt;
+
+
+      </th>
+      <td class="request-body__parameter-attributes-examples">
+
+
+<table id="ced3b4f400cc63c40bafcf02423aecf3">
+  <caption class="request-body-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="request-body__parameter request-body__array-first-type">
+      <th scope="row">array</th>
+      <td></td>
+      <td class="request-body__parameter-attributes-examples">
+  
+    
+
+</td>
+    </tr>
+<tr class="request-body__parameter array-parameter--description">
+      <th scope="row">
+      User</th>
+      <td></td>
+      <td class="request-body__parameter-attributes-examples">
+
+
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+      </td>
+      <td colspan="2"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+        </div>
+    </div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="a621bf7e-ee42-4357-b006-be47d4b6a396" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_creates-list-of-users-with-given-input-array_anchor" class="operation" aria-labelledby="operation_creates-list-of-users-with-given-input-array">
+	<div class="operation__content">
+        <h3 id="operation_creates-list-of-users-with-given-input-array">Creates list of users with given input array</h3>
+        <span class="operation--post operation--default">POST</span> <span class="operation__url">/user/createWithList</span>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_3be170f5c0e9884b325c45b98b84b76capplicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<table>
+  <caption class="data-type-title sr-only"> details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="request-body__parameter request-body__array-type-details">
+      <th class="request-body__parameter-type-label" scope="row" aria-describedby="3fdccac04f0cfc6c03ea4443f3b02be2">
+
+
+array of 
+
+
+
+&lt;a href=&#34;#type_user&#34;&gt;User&lt;/a&gt;
+&lt;button type=&#34;button&#34; class=&#34;btn--naked tooltip js-tooltip-trigger&#34; aria-expanded=&#34;false&#34; aria-haspopup=&#34;true&#34; aria-controls=&#34;tooltip_type_user&#34;&gt;
+	&lt;span class=&#34;sr-only&#34;&gt;User details&lt;/span&gt;
+	&lt;svg class=&#34;tooltip__icon&#34; viewBox=&#34;0 0 16 16&#34; aria-hidden=&#34;true&#34;&gt;&lt;g&gt;&lt;path d=&#34;M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z&#34;&gt;&lt;/path&gt;&lt;/g&gt;&lt;/svg&gt;
+&lt;/button&gt;
+
+
+      </th>
+      <td class="request-body__parameter-attributes-examples">
+
+
+<table id="3fdccac04f0cfc6c03ea4443f3b02be2">
+  <caption class="request-body-title sr-only">Datatype details</caption>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr class="request-body__parameter request-body__array-first-type">
+      <th scope="row">array</th>
+      <td></td>
+      <td class="request-body__parameter-attributes-examples">
+  
+    
+
+</td>
+    </tr>
+<tr class="request-body__parameter array-parameter--description">
+      <th scope="row">
+      User</th>
+      <td></td>
+      <td class="request-body__parameter-attributes-examples">
+
+
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+      </td>
+      <td colspan="2"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+        </div>
+    </div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="c567a413-faac-4769-9b6f-a5997fd8bb22" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_delete-user_anchor" class="operation" aria-labelledby="operation_delete-user">
+	<div class="operation__content">
+        <h3 id="operation_delete-user">Delete user</h3>
+        <span class="operation--delete operation--default">DELETE</span> <span class="operation__url">/user/{username}</span>
+	<div class="operation__description wysiwyg">This can only be done by the logged in user.</div><div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">username</th>
+	<td class="wysiwyg">The name that needs to be fetched. Use user1 for testing.</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid username supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">User not found</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="2ab881fc-c147-43c7-840f-56dfa5ac4048" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+<section id="operation_get-user-by-user-name_anchor" class="operation" aria-labelledby="operation_get-user-by-user-name">
+	<div class="operation__content">
+        <h3 id="operation_get-user-by-user-name">Get user by user name</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/user/{username}</span>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">username</th>
+	<td class="wysiwyg">The name that needs to be fetched. Use user1 for testing.</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/xml</span><span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_403bb8e578527c8e18c4bf5b4306c99bapplicationxml-applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_user">User</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_user">
+	<span class="sr-only">User details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid username supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">User not found</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="cabbe72f-cf47-45f2-afd1-df8f1091fe15" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+<section id="operation_updated-user_anchor" class="operation" aria-labelledby="operation_updated-user">
+	<div class="operation__content">
+        <h3 id="operation_updated-user">Updated user</h3>
+        <span class="operation--put operation--default">PUT</span> <span class="operation__url">/user/{username}</span>
+	<div class="operation__description wysiwyg">This can only be done by the logged in user.</div><div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+<table>
+  <caption class="request__path-variables">Path variables</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">username</th>
+	<td class="wysiwyg">The name that needs to be fetched. Use user1 for testing.</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+		
+
+<div class="request__content">
+    <span class="request__body">Body</span>
+    <div class="dropdown">
+    <span class="request__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_cc8549547b835e0cb6bb873029e14fb8applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+<a href="#type_user">User</a>
+<button type="button" class="btn--naked tooltip js-tooltip-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="tooltip_type_user">
+	<span class="sr-only">User details</span>
+	<svg class="tooltip__icon" viewBox="0 0 16 16" aria-hidden="true"><g><path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M7.88888889,6.11262338 C7.39796911,6.11262338 7,6.51059249 7,7.00151227 L7,11.4459567 C7,11.9368765 7.39796911,12.3348456 7.88888889,12.3348456 C8.37980867,12.3348456 8.77777778,11.9368765 8.77777778,11.4459567 L8.77777778,7.00151227 C8.77777778,6.51059249 8.37980867,6.11262338 7.88888889,6.11262338 Z M7.88888889,3.44293218 C7.39796911,3.44293218 7,3.84090129 7,4.33182107 C7,4.82274084 7.39796911,5.22070996 7.88888889,5.22070996 C8.37980867,5.22070996 8.77777778,4.82274084 8.77777778,4.33182107 C8.77777778,3.84090129 8.37980867,3.44293218 7.88888889,3.44293218 Z"></path></g></svg>
+</button>
+</div>
+        </div>
+    </div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid user supplied</div>
+
+
+
+</details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">404</span>Status 404</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">User not found</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="cb31b6f3-c885-42bd-b5a1-d97284acc110" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_logs-user-into-the-system_anchor" class="operation" aria-labelledby="operation_logs-user-into-the-system">
+	<div class="operation__content">
+        <h3 id="operation_logs-user-into-the-system">Logs user into the system</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/user/login</span>
+	<div class="definition__content definition">
+			<div>
+				<h4>Request</h4>
+		
+
+
+
+<table>
+  <caption class="request__query-parameters">Query parameters</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">username</th>
+	<td class="wysiwyg">The user name for login</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="request__parameter">
+	<th class="request__parameter-type-label" scope="row">password</th>
+	<td class="wysiwyg">The password for login in clear text</td>
+	<td class="request__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge badge--warn">Required</span></td>
+	<td class="request__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+		
+
+</div>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">successful operation</div>
+
+<table>
+  <caption class="response__headers">Headers</caption><thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="response__parameter">
+	<th class="response__parameter-type-label" scope="row">X-Rate-Limit</th>
+	<td class="wysiwyg">calls per hour allowed by the user</td>
+	<td class="response__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="response__parameter-attributes-examples">
+
+
+
+<div class="response__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT32</span></div></td>
+</tr>
+
+      
+
+
+<tr class="response__parameter">
+	<th class="response__parameter-type-label" scope="row">X-Expires-After</th>
+	<td class="wysiwyg">date in UTC when token expires</td>
+	<td class="response__parameter-type">
+    <span class="parameter-type">
+      
+
+datetime</span>
+<span class="badge">Optional</span></td>
+	<td class="response__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="response__content">
+    <span class="response__body">Body</span>
+    <div class="dropdown">
+    <span class="response__mimetype">application/xml</span><span class="response__mimetype">application/json</span></div>
+</div>
+
+    <div id="body_b5bc0b2f13bc97484748953c0eb8e865applicationxml-applicationjson" class="body__content" >
+    <div class="body__content">
+
+
+
+
+string</div>
+        </div>
+    </details>
+</div>
+
+				
+
+<div class="response">
+	<details class="response__detail" >
+		<summary class="response__type"><span><span class="badge badge--4xx">400</span>Status 400</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		<div class="response-description wysiwyg">Invalid username/password supplied</div>
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="03417de3-da55-420b-a440-a46abd542c96" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="operation_logs-out-current-logged-in-user-session_anchor" class="operation" aria-labelledby="operation_logs-out-current-logged-in-user-session">
+	<div class="operation__content">
+        <h3 id="operation_logs-out-current-logged-in-user-session">Logs out current logged in user session</h3>
+        <span class="operation--get operation--default">GET</span> <span class="operation__url">/user/logout</span>
+	<div class="definition__content definition">
+			<h4>Response</h4>
+		
+		
+				
+					
+
+<div class="response">
+	<details class="response__detail" open="">
+		<summary class="response__type"><span><span class="badge badge--2xx">200</span>Status 200</span><svg viewBox="0 0 16 16" aria-hidden="true" class="response__type--icon"><path d="M8 13.6l-8-8L2.6 3 8 8.4 13.4 3 16 5.6z"></path></svg></summary>
+		
+
+
+
+</details>
+</div>
+</div>
+	</div>
+	<div class="operation__content-info operation__content-info--odd">
+		
+<div class="try-in-tester js-try-in-tester">
+  <button class="try-in-tester__action js-try-in-tester--action btn btn--primary js-operation-try-in-tester "
+          data-operation-id="bc470b15-5cdf-4b42-99d4-29ce9b506e72" type="button">
+    Try in API Tester
+    </button>
+  </div>
+
+</div>
+</section>
+
+
+<section id="type_user_anchor" class="datatype" aria-labelledby="type_user">
+	<div class="data-type__content">
+		<div class="data-type__header">
+			<h3 id="type_user">User</h3>
+		</div>
+		<div class="definition__data-type definition">
+			<div id="tooltip_type_user" class="js-tooltip-content" >
+
+	
+
+
+
+<div class="data-type__object-title">Object</div>
+
+
+<table>
+  <thead class="sr-only">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Attributes and examples</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">id</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT64</span></div></td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">username</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">firstName</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">lastName</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">email</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">password</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">phone</th>
+	<td class="wysiwyg"></td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+string</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+</td>
+</tr>
+
+      
+
+
+<tr class="data-type__parameter">
+	<th class="data-type__parameter-type-label" scope="row">userStatus</th>
+	<td class="wysiwyg">User Status</td>
+	<td class="data-type__parameter-type">
+    <span class="parameter-type">
+      
+
+integer</span>
+<span class="badge">Optional</span></td>
+	<td class="data-type__parameter-attributes-examples">
+
+
+
+<div class="data-type__parameter-attribute-example"><span class="metadata__label">Format</span><span class="badge">INT32</span></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+	</div>
+</section>
+</section>
+<span class="back-to-top-wrapper"><a class="back-to-top" href="#"><span class="sr-only">back to top</span>↑</a></span></main>
+    <footer class="footer">
+
+
+<span>API Portal</span>
+</footer>
+
+		
+
+<div tabindex="-1" role="dialog" aria-labelledby="modal-label" hidden id="try-in-tester-version-modal" class="modal__overlay js-close-modal">
+  <div role="document" class="modal__wrapper scrollable">
+    <h2 id="modal-label" class="modal__title">Talend API Tester upgrade is required</h2>
+    <div class="modal__content">
+      <p>Your Talend API Tester extension is in Version <strong id="js-current-version-tester"></strong>, but the minimum required version for this feature is <strong id="js-minimum-version-tester"></strong>.</p>
+      <a target="_blank" rel="noopener" href="https://help.talend.com/access/sources/content/topic?pageid=tester_update_extension&EnrichVersion=Cloud&afs:lang=en">
+        Learn more about API Tester<svg role="img" aria-label='Open in a new window' class="open-link-new-window-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+          <path d="M16 0v6h-2V3l-8.489 8.773-1.253-1.253L13 2h-3V0zm-4 10v4H2V4h4V2H0v14h14v-6z"></path>
+        </svg>
+      </a>
+    </div>
+    <button type="button" aria-label='Close modal' class="js-close-modal modal__close btn--naked">&times;</button>
+  </div>
+</div>
+<script type="module" src="../../../js/apis.min.0af8c111f772d278d2fbde38fa252ca44e9268c68955afb4aa5b85633382efb3.js"></script>
+		
+		<script type="module" src="../../../js/tryInTester.min.3429317c2b5f67d690fc7dc79759ee71803fb089dc3628fb584c21f3f2a782fd.js"></script>
+	</body>
+</html>
