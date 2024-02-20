@@ -19,7 +19,7 @@ pygmentsUseClasses = true
 
 # Title used in the header and footer of the Web site
 [languages.en]
-  title = "API Portal"
+  title = "API Portal by Alexander Chamizo"
   weight = 1
 
 # Tells Hugo that the "apis" directory is actually a content directory
