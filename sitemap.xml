@@ -4,6 +4,8 @@
   <url>
     <loc>/apis/petstore-api/4.1.0/</loc>
   </url><url>
+    <loc>/apis/student-api/1.0.0/</loc>
+  </url><url>
     <loc>/apis/student-api/1.0.1/</loc>
   </url><url>
     <loc>/apis/</loc>
