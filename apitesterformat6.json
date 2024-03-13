@@ -3,9 +3,9 @@
   "entities" : [ {
     "entity" : {
       "type" : "Project",
-      "name" : "Student API 1.0.1",
+      "name" : "Student API 1.0.2",
       "description" : "This is the offical API for trusted Student data at our institution.",
-      "importedFrom" : "a34007ee-a53c-41df-b627-054b7d059ab4"
+      "importedFrom" : "a3389b8f-9503-4300-8c3d-ebf0f83d9d22"
     },
     "children" : [ {
       "entity" : {
@@ -114,12 +114,12 @@
     } ]
   } ],
   "environments" : [ {
-    "name" : "Student API 1.0.1",
+    "name" : "Student API 1.0.2",
     "importedFrom" : {
-      "projectId" : "a34007ee-a53c-41df-b627-054b7d059ab4"
+      "projectId" : "a3389b8f-9503-4300-8c3d-ebf0f83d9d22"
     },
     "variables" : {
-      "4db32451-5080-4089-b1f3-8bbdee2e1754" : {
+      "c45651e9-c3c0-4bab-86a5-9bcdc13b93a5" : {
         "name" : "BaseUrl",
         "value" : "http://localhost:8042/services/student-api",
         "enabled" : true,
