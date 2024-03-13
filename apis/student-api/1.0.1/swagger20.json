@@ -6,7 +6,7 @@
     "title" : "Student API",
     "contact" : { }
   },
-  "host" : "usrem-kjb:8040",
+  "host" : "localhost:8042",
   "basePath" : "/services/student-api",
   "schemes" : [ "http" ],
   "paths" : {

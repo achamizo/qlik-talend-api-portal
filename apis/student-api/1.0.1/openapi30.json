@@ -7,7 +7,7 @@
     "version" : "1.0.1"
   },
   "servers" : [ {
-    "url" : "http://usrem-kjb:8040/services/student-api",
+    "url" : "http://localhost:8042/services/student-api",
     "description" : "Demo Environment"
   } ],
   "paths" : {
