@@ -3,9 +3,9 @@
   "entities" : [ {
     "entity" : {
       "type" : "Project",
-      "name" : "Student API 1.0.0",
+      "name" : "Student API 1.0.1",
       "description" : "This is the offical API for trusted Student data at our institution.",
-      "importedFrom" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
+      "importedFrom" : "a34007ee-a53c-41df-b627-054b7d059ab4"
     },
     "children" : [ {
       "entity" : {
@@ -114,27 +114,14 @@
     } ]
   } ],
   "environments" : [ {
-    "name" : "Student API 1.0.0",
+    "name" : "Student API 1.0.1",
     "importedFrom" : {
-      "projectId" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
+      "projectId" : "a34007ee-a53c-41df-b627-054b7d059ab4"
     },
     "variables" : {
-      "a1617f52-b617-4074-8ce4-118dcc29b089" : {
+      "a068677c-6fae-4925-8027-226351585859" : {
         "name" : "BaseUrl",
-        "value" : "https://lp1uhp3.us.api-mocks.com",
-        "enabled" : true,
-        "private" : false
-      }
-    }
-  }, {
-    "name" : "Student API 1.0.0",
-    "importedFrom" : {
-      "projectId" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
-    },
-    "variables" : {
-      "eb85a466-6454-425a-bf3e-d125cdabaf06" : {
-        "name" : "BaseUrl",
-        "value" : "http://tal-bhough5520:8040/services/student-api",
+        "value" : "http://usrem-kjb:8040/services/student-api",
         "enabled" : true,
         "private" : false
       }
