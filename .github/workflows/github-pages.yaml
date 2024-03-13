@@ -1,7 +1,8 @@
 name: Build and deploy Hugo site to GitHub Pages
-on:
+"on":
   push:
-    branches: [ 'main' ]
+    branches:
+    - main
 permissions: read-all
 jobs:
   github-pages:
