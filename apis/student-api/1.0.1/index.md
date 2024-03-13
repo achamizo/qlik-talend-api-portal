@@ -11,7 +11,7 @@ api-definition:
     contact: {}
   contract:
     baseUrls:
-    - url: "http://usrem-kjb:8040/services/student-api"
+    - url: "http://localhost:8042/services/student-api"
       description: "Demo Environment"
       isPublished: true
     unsortedElementOrder:
@@ -333,9 +333,9 @@ api-tryin: |-
         "projectId" : "a34007ee-a53c-41df-b627-054b7d059ab4"
       },
       "variables" : {
-        "a068677c-6fae-4925-8027-226351585859" : {
+        "4db32451-5080-4089-b1f3-8bbdee2e1754" : {
           "name" : "BaseUrl",
-          "value" : "http://usrem-kjb:8040/services/student-api",
+          "value" : "http://localhost:8042/services/student-api",
           "enabled" : true,
           "private" : false
         }
