@@ -3,579 +3,140 @@
   "entities" : [ {
     "entity" : {
       "type" : "Project",
-      "name" : "Petstore API 4.1.0",
-      "description" : "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
-      "importedFrom" : "0280ac6a-2fda-4c44-b4c1-85bdc55e390a"
+      "name" : "Student API 1.0.0",
+      "description" : "This is the offical API for trusted Student data at our institution.",
+      "importedFrom" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
     },
     "children" : [ {
       "entity" : {
-        "type" : "Service",
-        "name" : "Pet"
-      },
-      "children" : [ {
-        "entity" : {
-          "type" : "Request",
-          "id" : "afda4b22-b78a-46a4-abad-351e7f516610",
-          "name" : "Finds Pets by tags",
-          "description" : "Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet/findByTags",
-            "query" : {
-              "delimiter" : "&",
-              "items" : [ {
-                "name" : "tags",
-                "value" : "",
-                "enabled" : true
-              } ]
-            }
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/xml, application/json"
-          } ],
-          "headersType" : "Form",
-          "uriEditor" : true
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "3da4ea0f-146c-494b-b452-e4d4a1b65700",
-          "name" : "Finds Pets by status",
-          "description" : "Multiple status values can be provided with comma separated strings",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet/findByStatus",
-            "query" : {
-              "delimiter" : "&",
-              "items" : [ {
-                "name" : "status",
-                "value" : "",
-                "enabled" : true
-              } ]
-            }
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/xml, application/json"
-          } ],
-          "headersType" : "Form",
-          "uriEditor" : true
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "be380936-7e09-4b4d-a34d-891357031ecc",
-          "name" : "Update an existing pet",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "PUT",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          }, {
-            "enabled" : false,
-            "name" : "Content-Type",
-            "value" : "application/xml"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : ""
-          }
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "4567ac19-428f-4c96-87d8-58b879c8a961",
-          "name" : "Add a new pet to the store",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          }, {
-            "enabled" : false,
-            "name" : "Content-Type",
-            "value" : "application/xml"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : ""
-          }
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "8d94befd-ed55-4181-908b-e342b5231028",
-          "name" : "Find pet by ID",
-          "description" : "Returns a single pet",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet/{petId}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ {
-            "enabled" : false,
-            "name" : "api_key",
-            "value" : "${\"Api_keyHeaderApi_key\"}"
-          }, {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/xml, application/json"
-          } ],
-          "headersType" : "Form"
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "02c15703-a1a3-47a3-8420-708b6d99d12a",
-          "name" : "Updates a pet in the store with form data",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet/{petId}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/x-www-form-urlencoded"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Form",
-            "formBody" : {
-              "items" : [ {
-                "enabled" : false,
-                "name" : "name",
-                "value" : "",
-                "type" : "Text"
-              }, {
-                "enabled" : false,
-                "name" : "status",
-                "value" : "",
-                "type" : "Text"
-              } ],
-              "encoding" : "application/x-www-form-urlencoded"
-            }
-          }
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "1097797e-06e1-404d-b943-9468fb7cc100",
-          "name" : "Deletes a pet",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet/{petId}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "DELETE"
-          },
-          "headers" : [ {
-            "enabled" : false,
-            "name" : "api_key",
-            "value" : ""
-          } ],
-          "headersType" : "Form"
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "8323c0a7-9874-4d3f-87b4-a05db886bf8b",
-          "name" : "uploads an image",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/pet/{petId}/uploadImage"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "multipart/form-data"
-          }, {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/json"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Form",
-            "formBody" : {
-              "items" : [ {
-                "enabled" : false,
-                "name" : "additionalMetadata",
-                "value" : "",
-                "type" : "Text"
-              }, {
-                "enabled" : false,
-                "name" : "file",
-                "type" : "File"
-              } ],
-              "encoding" : "multipart/form-data"
-            }
-          }
-        }
-      } ]
+        "type" : "Request",
+        "id" : "eb16b27f-420c-49db-ab0a-fb125d62135b",
+        "name" : "Get by Student ID",
+        "description" : "Get Students using the Student ID",
+        "uri" : {
+          "host" : "${\"BaseUrl\"}",
+          "path" : "/student/{id}/"
+        },
+        "method" : {
+          "link" : "",
+          "name" : "GET"
+        },
+        "headers" : [ {
+          "enabled" : true,
+          "name" : "Accept",
+          "value" : "application/json"
+        } ],
+        "headersType" : "Form"
+      }
     }, {
       "entity" : {
-        "type" : "Service",
-        "name" : "Store"
-      },
-      "children" : [ {
-        "entity" : {
-          "type" : "Request",
-          "id" : "3816fac2-73c6-43f8-87e6-4c41270f5051",
-          "name" : "Place an order for a pet",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/store/order"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          }, {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/xml, application/json"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : ""
-          }
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "4e25864c-4acc-4e1a-93f2-e0442f913821",
-          "name" : "Find purchase order by ID",
-          "description" : "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/store/order/{orderId}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/xml, application/json"
-          } ],
-          "headersType" : "Form"
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "c441e2e1-f24b-4412-8406-36bf165b4f05",
-          "name" : "Delete purchase order by ID",
-          "description" : "For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/store/order/{orderId}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "DELETE"
-          },
-          "headers" : [ ],
-          "headersType" : "Form"
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "db23ec47-776e-49a1-ac0d-2dc69d8b29aa",
-          "name" : "Returns pet inventories by status",
-          "description" : "Returns a map of status codes to quantities",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/store/inventory"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ {
-            "enabled" : false,
-            "name" : "api_key",
-            "value" : "${\"Api_keyHeaderApi_key\"}"
-          }, {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/json"
-          } ],
-          "headersType" : "Form"
-        }
-      } ]
+        "type" : "Request",
+        "id" : "91ae5f3c-864c-4b79-95bf-00fc9c5452ce",
+        "name" : "Delete Student",
+        "description" : "Delete the student by ID",
+        "uri" : {
+          "host" : "${\"BaseUrl\"}",
+          "path" : "/student/{id}/"
+        },
+        "method" : {
+          "link" : "",
+          "name" : "DELETE"
+        },
+        "headers" : [ ],
+        "headersType" : "Form"
+      }
     }, {
       "entity" : {
-        "type" : "Service",
-        "name" : "User"
-      },
-      "children" : [ {
-        "entity" : {
-          "type" : "Request",
-          "id" : "0150d33b-4014-46b9-b905-aca48cbbbdb9",
-          "name" : "Create user",
-          "description" : "This can only be done by the logged in user.",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : ""
+        "type" : "Request",
+        "id" : "c511c381-21b7-49f1-b24e-22c5279f3514",
+        "name" : "Get Students",
+        "uri" : {
+          "host" : "${\"BaseUrl\"}",
+          "path" : "/student/",
+          "query" : {
+            "delimiter" : "&",
+            "items" : [ {
+              "name" : "applicantStatus",
+              "value" : "accepted",
+              "enabled" : false
+            }, {
+              "name" : "lastName",
+              "value" : "Jones",
+              "enabled" : false
+            }, {
+              "name" : "entryTerm",
+              "value" : "201801",
+              "enabled" : false
+            }, {
+              "name" : "firstName",
+              "value" : "John",
+              "enabled" : false
+            } ]
           }
+        },
+        "method" : {
+          "link" : "",
+          "name" : "GET"
+        },
+        "headers" : [ {
+          "enabled" : true,
+          "name" : "Accept",
+          "value" : "application/json"
+        } ],
+        "headersType" : "Form",
+        "uriEditor" : true
+      }
+    }, {
+      "entity" : {
+        "type" : "Request",
+        "id" : "2f9c7f34-fa22-4da4-b0f1-960f465265d3",
+        "name" : "Add a new Student",
+        "uri" : {
+          "host" : "${\"BaseUrl\"}",
+          "path" : "/student/"
+        },
+        "method" : {
+          "link" : "",
+          "name" : "POST",
+          "requestBody" : true
+        },
+        "headers" : [ {
+          "enabled" : true,
+          "name" : "Content-Type",
+          "value" : "application/json"
+        } ],
+        "headersType" : "Form",
+        "body" : {
+          "bodyType" : "Text",
+          "textBody" : "{\n  \"student\": {\n    \"studentId\": 55555,\n    \"firstName\": \"Andrew\",\n    \"middleName\": \"Franklin\",\n    \"lastName\": \"Quincy\",\n    \"applicantStatus\": \"accepted\",\n    \"entryTerm\": 201702,\n    \"address\": \"1793 East Main Street\",\n    \"city\": \"Columbia\",\n    \"state\": \"Hawaii\",\n    \"zip\": 62433\n  }\n}"
         }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "a621bf7e-ee42-4357-b006-be47d4b6a396",
-          "name" : "Creates list of users with given input array",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user/createWithArray"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : ""
-          }
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "c567a413-faac-4769-9b6f-a5997fd8bb22",
-          "name" : "Creates list of users with given input array",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user/createWithList"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : ""
-          }
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "cabbe72f-cf47-45f2-afd1-df8f1091fe15",
-          "name" : "Get user by user name",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user/{username}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/xml, application/json"
-          } ],
-          "headersType" : "Form"
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "cb31b6f3-c885-42bd-b5a1-d97284acc110",
-          "name" : "Updated user",
-          "description" : "This can only be done by the logged in user.",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user/{username}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "PUT",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : ""
-          }
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "2ab881fc-c147-43c7-840f-56dfa5ac4048",
-          "name" : "Delete user",
-          "description" : "This can only be done by the logged in user.",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user/{username}"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "DELETE"
-          },
-          "headers" : [ ],
-          "headersType" : "Form"
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "03417de3-da55-420b-a440-a46abd542c96",
-          "name" : "Logs user into the system",
-          "description" : "",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user/login",
-            "query" : {
-              "delimiter" : "&",
-              "items" : [ {
-                "name" : "username",
-                "value" : "",
-                "enabled" : true
-              }, {
-                "name" : "password",
-                "value" : "",
-                "enabled" : true
-              } ]
-            }
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/xml, application/json"
-          } ],
-          "headersType" : "Form",
-          "uriEditor" : true
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "bc470b15-5cdf-4b42-99d4-29ce9b506e72",
-          "name" : "Logs out current logged in user session",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/user/logout"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "GET"
-          },
-          "headers" : [ ],
-          "headersType" : "Form"
-        }
-      } ]
+      }
     } ]
   } ],
   "environments" : [ {
-    "name" : "Petstore API 4.1.0",
+    "name" : "Student API 1.0.0",
     "importedFrom" : {
-      "projectId" : "0280ac6a-2fda-4c44-b4c1-85bdc55e390a"
+      "projectId" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
     },
     "variables" : {
-      "12299b6d-90bc-4a58-826e-4cb87d86ba4f" : {
+      "a1617f52-b617-4074-8ce4-118dcc29b089" : {
         "name" : "BaseUrl",
-        "value" : "http://petstore.swagger.io/v2",
+        "value" : "https://lp1uhp3.us.api-mocks.com",
         "enabled" : true,
         "private" : false
-      },
-      "869ab934-e202-40b0-b72f-f69fc6e2082d" : {
-        "name" : "Api_keyHeaderApi_key",
-        "value" : "",
+      }
+    }
+  }, {
+    "name" : "Student API 1.0.0",
+    "importedFrom" : {
+      "projectId" : "9d0f92c5-3e33-4622-a719-72d01791f7b5"
+    },
+    "variables" : {
+      "eb85a466-6454-425a-bf3e-d125cdabaf06" : {
+        "name" : "BaseUrl",
+        "value" : "http://tal-bhough5520:8040/services/student-api",
         "enabled" : true,
-        "private" : true
+        "private" : false
       }
     }
   } ]
